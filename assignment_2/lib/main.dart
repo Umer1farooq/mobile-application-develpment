@@ -4,7 +4,7 @@ import 'screens/list_screen.dart';
 import 'screens/about_screen.dart';
 
 void main() {
-  runApp(const TravelGuideApp());
+  runApp(TravelGuideApp());
 }
 
 class TravelGuideApp extends StatefulWidget {
@@ -16,30 +16,26 @@ class TravelGuideApp extends StatefulWidget {
 
 class _TravelGuideAppState extends State<TravelGuideApp> {
   int _selectedIndex = 0;
-
-  final List<Widget> _screens = const [
-    HomeScreen(),
-    ListScreen(),
-    AboutScreen(),
-  ];
+  List _screens = [HomeScreen(), ListScreen(), AboutScreen()];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'TravelGuideApp',
       home: Scaffold(
-        appBar: AppBar(title: const Text('Travel Guide')),
-        body: SafeArea(child: _screens[_selectedIndex]),
+        appBar: AppBar(title: Text('Travel Guide')),
+        body: _screens[_selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _selectedIndex,
-          onTap: (index) {
-            setState(() => _selectedIndex = index);
+          onTap: (value) {
+            setState(() {
+              _selectedIndex = value;
+            });
           },
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(Icons.list), label: 'List'),
-            BottomNavigationBarItem(icon: Icon(Icons.info), label: 'About'),
+          currentIndex: _selectedIndex,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "HOME"),
+            BottomNavigationBarItem(icon: Icon(Icons.list), label: "LIST"),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: "ABOUT"),
           ],
         ),
       ),
