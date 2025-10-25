@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '/list.dart';
+import 'list.dart';
 
 class RMovieDetail extends StatelessWidget {
   final int index;
