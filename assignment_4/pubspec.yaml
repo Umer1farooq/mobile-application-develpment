@@ -1,28 +1,29 @@
-name: assignment_4
-description: "A new Flutter project."
-publish_to: 'none'
-version: 0.1.0
-
-environment:
-  sdk: ^3.9.0
-
 dependencies:
   flutter:
     sdk: flutter
-  provider: ^6.0.0
-  http: ^0.13.5
+
+  # SAFE version of camera (newest breaking API avoided)
+  camera: ^0.10.6
+
+  # SAFE geolocator version (API same as your code)
   geolocator: ^9.0.2
-  google_maps_flutter: ^2.2.0
-  camera: ^0.10.0+4
+
+  # SAFE http version
+  http: ^0.13.6
+
+  # Safe upgrade for uuid
+  uuid: ^4.5.2
+
+  provider: ^6.1.5
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  path_provider: ^2.0.11
-  uuid: ^3.0.6
+  path_provider: ^2.1.5
+
+  # Safe google maps version
+  google_maps_flutter: ^2.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
 
-flutter:
-  uses-material-design: true
+  flutter_lints: ^6.0.0
