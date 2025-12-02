@@ -40,15 +40,17 @@ class MyApp extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        cardTheme: CardTheme(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(14),
-          ),
-          elevation: 4,
-        ),
+        cardTheme: newMethod(),
       ),
       home: HomePage(),
       debugShowCheckedModeBanner: false,
+    );
+  }
+
+  CardTheme newMethod() {
+    return CardTheme(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+      elevation: 4,
     );
   }
 }
